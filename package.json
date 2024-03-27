@@ -1,0 +1,35 @@
+{
+  "name": "namaste-trishal",
+  "version": "1.0.0",
+  "description": "This is namaste trishal",
+  "scripts": {
+    "test": "jest",
+    "start": "rm -rf .parcel-cache && parcel",
+    "build": "rm -rf .parcel-cache && parcel build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trishal01/namaste-trishal.git"
+  },
+  "keywords": [
+    "trishal",
+    "react"
+  ],
+  "author": "Trishal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trishal01/namaste-trishal/issues"
+  },
+  "homepage": "https://github.com/trishal01/namaste-trishal#readme",
+  "dependencies": {
+    "parcel": "^2.12.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "process": "^0.11.10"
+  },
+  "browserslist": [
+    "last 3 versions"
+  ]
+}
