@@ -1,3 +1,64 @@
 #heading {
     color: red;
 }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: aquamarine;
+}
+
+.logo {
+    
+    width: 50px;
+}
+
+.nav-icon > ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-icon > ul > li {
+    margin: 0 10px;
+}
+
+/* body */
+
+.body {
+    height: 800px;
+    /* width: 800px; */
+    border: 1px solid black;
+}
+
+.restro-container {
+    display: flex;
+}
+.restro-card {
+    height: 400px;
+    width: 200px;
+    border: 1px solid pink;
+    padding: 4px;
+    margin: 1rem 3rem;
+
+
+    .item-image {
+        width: 100%;
+
+    }
+
+    .cart-detail {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+
+}
+
+.restro-card:hover {
+    border: 1px solid red;
+    cursor: pointer;
+}
+.body > .search-bar {
+    padding: 20px;
+}
+
