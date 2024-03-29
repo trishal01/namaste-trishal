@@ -1,0 +1,1 @@
+export const LOGO_URL = 'https://img.freepik.com/free-vector/bird-colorful-logo-gradient-vector_343694-1365.jpg?w=740&t=st=1711644550~exp=1711645150~hmac=adb2ac5aa73e8afa057ec57f0b79045a71ed487abebb66b27ab2598e40827b56';

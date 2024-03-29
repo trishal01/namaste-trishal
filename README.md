@@ -22,3 +22,5 @@ Transpiling
 have web workers, server lorkers
 lazy implementation
 .parcel-cache file is used to cache, which makes app way faster
+
+# Food ordering app
