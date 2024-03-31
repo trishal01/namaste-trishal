@@ -51,7 +51,65 @@ if PRop provided then react only render newer componet , not all componennts
 
 react officially says dont use index as key prop
 
+react is fast in DOm Manipulation - UI and Data Layer should work quick and simultaneously
 
+React hooks are normal JS utility functions, wrote by Facebook team
+
+USESTATE - super powerful local react state variables 
+
+whenever a state variables update/changes, react re-rerenders the component
+
+React uses reconciliation algorithm (react fibre)
+
+Diff algo - find the differenece between 2 virtual DOM
+
+Incremental Rendering - Ability to split the rendering work into different chunks over multiple Frames
+
+React do fast DOM manipulations because of Virtual DOM
+
+when we call the useState function , diff algo start implementing
+
+monolith - huge big project has api , ui code, authentication, db coonectivity code, feature code
+
+micorSERVICES - BE Service, UI service, UI , Authentication service 
+
+SEPERATION OF CONCERS - SINGLE RESPONSIB;E ARCHITECTURE
+
+SERVICE CONNECT WITH EACH OTHER     
+we can use language , techstack based upon useCase
+
+all services run on their own specific ports
+1234 port - UI service  
+2828 - BE   / api
+1727 - SMS  / sms
+
+all ports map to same URL
+
+Two ways to get data
+
+1. when app loada, we make API call to fetch data, and then render on the UI
+
+2. when app loada, then render UI and then we make API call to fetch data, and then again re-render with the data
+
+we use 2 nd approach in react for better user Exp
+
+React has better and fast rendering mechanism
+
+as soon as UI render, useeffect callback functioon called
+
+brroeswes block from one origin to another, CORS policy
+
+rendering based upon a condition is called as conditional rendering
+
+How can we update const (loggedStatus) value -> const [loggedStatus, setLoggedStatus] = useState('Login');
+because when loggedStatus change, component rerender which means now loggedStatus is a already new variable with new value
+
+React Fibre is new React reconciliation method to effectively differ between the virtual DOm and updates the UI
+
+If nodependency array, useEffect run on every render, when dependency added usefeect will render only when dependency change
+
+call hooks on start on function component, alway keep at first level
+never create hooks inside if else, for loop, function
 
 
 

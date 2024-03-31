@@ -1,4 +1,4 @@
-export const restroApiResponse = {
+export const restroApiResponse1 = {
     status: 200,
     data: [
         {
@@ -47,7 +47,7 @@ export const restroApiResponse = {
             id: 7,
             name: "KFC",
             price: 200,
-            ratings: 3.5,
+            ratings: 4.2,
             status: "open",
         },
     ],

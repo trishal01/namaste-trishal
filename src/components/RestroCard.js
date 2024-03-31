@@ -2,8 +2,7 @@ import { LOGO_URL } from '../utils/constant';
 import { styleCard } from '../assets/styles'
 
 const RestroCard = ({ restroData }) => {
-    console.log({ restroData })
-    const { name, price, ratings, status } = restroData;
+    const { name, avgRating } = restroData?.info;
     return (
         <div className="restro-card" style={styleCard}>
             <img
@@ -11,13 +10,12 @@ const RestroCard = ({ restroData }) => {
                 className="item-image"
                 src={LOGO_URL}
             />
-            {console.log(name)}
             <h4>{name}</h4>
 
             <div className="cart-detail">
-                <h5>{price}</h5>
-                <h5>{ratings}</h5>
-                <h5>{status}</h5>
+                <h5>{restroData.aggregatedDiscountInfoV3?.header}</h5>
+                <h5>{avgRating}</h5>
+                <h5>{restroData.availability?.opened ? 'open' : 'closed'}</h5>
             </div>
         </div>
     );
