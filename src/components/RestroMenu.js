@@ -1,24 +1,17 @@
-import { useEffect, useState } from "react"
 import Shimmer from "./Shimmer";
 import { useParams } from 'react-router-dom';
+import useRestroMenu from '../utils/useRestroMenu'
 
 const RestroMenu = () => {
-    const [restroInfo, setRestroInfo] = useState(null);
     const { resId } = useParams(); // extracting resId value from URL params, bcz i.e route value
-    useEffect(() => {
-        fetchMenu();
-    }, [])
 
-    const fetchMenu = async () => {
-        const data = await fetch('https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.65420&lng=77.23730&restaurantId=' +resId+ '&catalog_qa=undefined&isMenuUx4=true&submitAction=ENTER');
-        const json = await data.json();
-        setRestroInfo(json?.data);
-        console.log('JSON', json?.data);
-    }
+    // create a custom hook and use it is better way and folloe single responsibility feature
+    const restroInfo = useRestroMenu(resId);
 
     // we are using it above id and cuisines value bcz we dont wanna extract id and cuisine value if its shimmer, i.e we returning
     if (restroInfo === null) return <Shimmer />
 
+    // extracting props from data retreived
     // const {id, cuisines} = restroInfo?.cards[0]?.card?.card?.info;
 
     return (

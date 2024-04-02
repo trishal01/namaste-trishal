@@ -148,6 +148,10 @@ componentWillUnmount
 
 componentDidUpdate cycle runs after componentDidMount cyle also as soon as setState update
 
+breakdown a component makes it readable, reusable, testable and modular
+
+Suspense component's fallback attribute data is used to show the data for the time lazy load the files
+
 
 
 */

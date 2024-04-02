@@ -39,3 +39,11 @@ Server side
     Commit Phase
         React update DOM (DOM Manipulation)
         Component DID Mount
+
+# Optimization Principle
+
+A component, class, function must have single responsibility feature
+
+# DO LOGICAL Separation of bundling in app
+
+dynamic bundling, chunking, Lazy loading, code splitting, on demand loading, dynamic import

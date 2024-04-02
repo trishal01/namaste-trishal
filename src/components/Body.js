@@ -3,6 +3,7 @@ import { useEffect, useState, useState } from 'react'
 import { restroApiResponse1 } from "../utils/mockData";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
 
@@ -21,6 +22,10 @@ const Body = () => {
         setRestroApiResponse(jsonData?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilteredRestroApiResponse(jsonData?.data?.cards?.[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
+
+    const onlineStatus = useOnlineStatus();
+
+    if(!onlineStatus) return <h1>Seems like network is disconnected</h1>
 
     console.log('body rendered')
     return (
