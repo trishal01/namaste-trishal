@@ -24,3 +24,18 @@ lazy implementation
 .parcel-cache file is used to cache, which makes app way faster
 
 # Food ordering app
+
+# 2 Types of routing in webapps
+
+Client side
+Server side
+
+# Component Mounting Lifecycle
+
+    Render Phase
+        constructor (props and state creation phase)
+        render - reconciliation (finding the difference in components)
+
+    Commit Phase
+        React update DOM (DOM Manipulation)
+        Component DID Mount

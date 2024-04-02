@@ -111,12 +111,42 @@ If nodependency array, useEffect run on every render, when dependency added usef
 call hooks on start on function component, alway keep at first level
 never create hooks inside if else, for loop, function
 
+------------
+react router dom npm is used in react for routing
+
+we have to config in App.js for react routing
+configuration like what will happen on a specific route
+
+useRouterError is used to better describe about Error
 
 
 
+Children routes
+we create clilderen routes of app layout to show header and footer with al other compomemts, USE OUTLET from router-dom for it
 
+LINK TAG is used to navigate to new page without reloading complete page, ANCHOR Tag relaod complete page
 
+DYNAMUC ROUTING - different route for each routing
 
+GraphQL resolved data over fetching issue
+
+we can't blindly use <shimmer at start of elemnt code
+
+// CLASS COMPONENT
+when a instace of class is initialted comstructor is called and state is initiated
+
+loading a component , means mounting component, invokig comp
+
+never update state variable directly even in class based component
+
+state change --> render --> useEffect called
+
+#LIFECYCLE CLASS BASED COMPONENT
+componentDidMount
+componentDidUpdate
+componentWillUnmount
+
+componentDidUpdate cycle runs after componentDidMount cyle also as soon as setState update
 
 
 

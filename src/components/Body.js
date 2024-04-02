@@ -2,6 +2,7 @@ import RestroCard from "./RestroCard";
 import { useEffect, useState, useState } from 'react'
 import { restroApiResponse1 } from "../utils/mockData";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
 
@@ -23,7 +24,7 @@ const Body = () => {
 
     console.log('body rendered')
     return (
-        restroApiResponse.length === 0 ? <Shimmer /> :
+        restroApiResponse?.length === 0 ? <Shimmer /> :
             <div className="body">
                 <div className="filter">
                     <div className="search">
@@ -62,7 +63,8 @@ const Body = () => {
                 <div className="restro-container">
                     {console.log('11 ', restroApiResponse)}
                     {filteredRestroApiResponse.map((restro) => (
-                        <RestroCard key={restro.info.id} restroData={restro} />
+                        <Link key={restro.info.id} to={'/restraunt/' + restro.info.id}> <RestroCard restroData={restro} /> </Link>
+
                     ))}
                 </div>
             </div>
