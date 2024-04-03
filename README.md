@@ -47,3 +47,11 @@ A component, class, function must have single responsibility feature
 # DO LOGICAL Separation of bundling in app
 
 dynamic bundling, chunking, Lazy loading, code splitting, on demand loading, dynamic import
+
+# ways to add css in project
+
+css
+SCSS
+Styled Component
+CSS Libraries - Material UI, Bootstrap, ANT Design, Chakra UI
+Tailwind CSS

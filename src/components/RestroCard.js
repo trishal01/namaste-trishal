@@ -1,19 +1,18 @@
 import { LOGO_URL } from '../utils/constant';
-import { styleCard } from '../assets/styles'
 
 const RestroCard = ({ restroData }) => {
     const { name, avgRating } = restroData?.info;
     return (
-        <div className="restro-card" style={styleCard}>
+        <div className=" w-[250px] p-4 m-4 rounded-lg bg-gray-200 hover:bg-gray-400">
             <img
                 alt="item-image"
-                className="item-image"
+                className="rounded-lg"
                 src={LOGO_URL}
             />
-            <h4>{name}</h4>
+            <h4 className='font-bold py-4 dark:font-normal'>{name}</h4>
 
             <div className="cart-detail">
-                <h5>{restroData.aggregatedDiscountInfoV3?.header}</h5>
+                <h5>{restroData?.aggregatedDiscountInfoV3?.header}</h5>
                 <h5>{avgRating}</h5>
                 <h5>{restroData.availability?.opened ? 'open' : 'closed'}</h5>
             </div>

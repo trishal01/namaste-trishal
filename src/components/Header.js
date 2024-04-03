@@ -10,22 +10,22 @@ export const Header = () => {
     const onlineStatus = useOnlineStatus();
 
     return (
-        <div className="header">
+        <div className="flex justify-between bg-pink-400 shadow-lg sm:bg-purple-2008">
             <div className="logo-container">
                 <img
-                    className="logo"
+                    className="w-16"
                     src={LOGO_URL}
                 />
             </div>
-            <div className="nav-icon">
-                <ul>
-                    <li> Satus : {onlineStatus ? '🟢' : '🔴'} </li>
-                    <li><Link to='/'> Home </Link> </li>
-                    <li> <Link to='/about'> About </Link></li>
-                    <li> <Link to='/contact'> Contact US </Link></li>
-                    <li><Link to='/grocery'>Grocery</Link></li>
+            <div className="flex items-center">
+                <ul className='flex p-4 m-4'>
+                    <li className='px-2'> Status : {onlineStatus ? '🟢' : '🔴'} </li>
+                    <li className='px-2'><Link to='/'> Home </Link> </li>
+                    <li className='px-2'> <Link to='/about'> About </Link></li>
+                    <li className='px-2'> <Link to='/contact'> Contact US </Link></li>
+                    <li className='px-2'><Link to='/grocery'>Grocery</Link></li>
+                    <button className='login' onClick={() => { loggedStatus === 'Login' ? setLoggedStatus('Logout') : setLoggedStatus('Login') }}>{loggedStatus}</button>
                 </ul>
-                <button className='login' onClick={() => { loggedStatus === 'Login' ? setLoggedStatus('Logout') : setLoggedStatus('Login') }}>{loggedStatus}</button>
             </div>
         </div>
     );

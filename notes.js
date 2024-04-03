@@ -152,6 +152,10 @@ breakdown a component makes it readable, reusable, testable and modular
 
 Suspense component's fallback attribute data is used to show the data for the time lazy load the files
 
+----CSS
+TAILWIND - CSS in JSX file only
+Postcss is a tool for transforming CSS with JS
 
-
+HOC is a component that takes a component and returns a component
+Basically it takes a component enhance it features and return it back
 */

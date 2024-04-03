@@ -25,16 +25,16 @@ const Body = () => {
 
     const onlineStatus = useOnlineStatus();
 
-    if(!onlineStatus) return <h1>Seems like network is disconnected</h1>
+    if (!onlineStatus) return <h1>Seems like network is disconnected</h1>
 
     console.log('body rendered')
     return (
         restroApiResponse?.length === 0 ? <Shimmer /> :
             <div className="body">
-                <div className="filter">
-                    <div className="search">
-                        <input type="text" className="search-box" value={searchValue} onChange={(e) => { setSearchValue(e.target.value); console.log(searchValue) }} />
-                        <button onClick={() => {
+                <div className="flex">
+                    <div className="m-4 p-4">
+                        <input type="text" className="border border-solid border-black" value={searchValue} onChange={(e) => { setSearchValue(e.target.value); console.log(searchValue) }} />
+                        <button className="px-4 py-2 m-4 bg-green-400" onClick={() => {
                             console.log('restroApiResponse ', restroApiResponse)
                             const filteredRestro = restroApiResponse.filter((f) => {
                                 console.log(f.info.name, ' === ', searchValue)
@@ -45,27 +45,30 @@ const Body = () => {
                         }}>Search </button>
                     </div>
 
-                    <div className="top-rated">
-                        <button onClick={() => {
-                            console.log('top ', restroApiResponse)
+                    <div className="flex items-center">
+                        <div className="px-4 py-2 m-4 bg-gray-100">
+                            <button onClick={() => {
+                                console.log('top ', restroApiResponse)
 
-                            let filteredList = restroApiResponse.filter(f => f.info.avgRating > 4)
-                            setFilteredRestroApiResponse(filteredList)
-                            console.log('top ', filteredList, ' --- ', restroApiResponse)
+                                let filteredList = restroApiResponse.filter(f => f.info.avgRating > 4)
+                                setFilteredRestroApiResponse(filteredList)
+                                console.log('top ', filteredList, ' --- ', restroApiResponse)
 
-                        }}>Top Rated Button </button>
+                            }}>Top Rated Button </button>
+                        </div>
+
+                        <div className="px-4 py-2 m-4 bg-gray-100">
+                            <button onClick={() => {
+                                let filteredList2 = restroApiResponse.filter(f => f.info.avgRating <= 4)
+                                setFilteredRestroApiResponse(filteredList2)
+                                console.log(filteredList2, 'low', restroApiResponse)
+                            }}>Low Rated Button </button>
+                        </div>
                     </div>
 
-                    <div className="low-rated">
-                        <button onClick={() => {
-                            let filteredList2 = restroApiResponse.filter(f => f.info.avgRating <= 4)
-                            setFilteredRestroApiResponse(filteredList2)
-                            console.log(filteredList2, 'low', restroApiResponse)
-                        }}>Low Rated Button </button>
-                    </div>
                 </div>
 
-                <div className="restro-container">
+                <div className="flex flex-wrap">
                     {console.log('11 ', restroApiResponse)}
                     {filteredRestroApiResponse.map((restro) => (
                         <Link key={restro.info.id} to={'/restraunt/' + restro.info.id}> <RestroCard restroData={restro} /> </Link>
