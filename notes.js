@@ -158,4 +158,16 @@ Postcss is a tool for transforming CSS with JS
 
 HOC is a component that takes a component and returns a component
 Basically it takes a component enhance it features and return it back
+
+LIFTING STATE UP - it is a feature in react to lift state from child component to parent component
+whenever a state need to shared among siblings , we lift the state up to a common ancestor to make it a sole source of truth
+used in accordion functionality
+
+If we use context api then a number of context need to be create and handle, therefore devs prefer using Redux with toolkit
+
+
+
+
+
+
 */

@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import UserContext from "../utils/UserContext";
 
 class UserClass extends React.Component {
 
@@ -53,6 +54,13 @@ class UserClass extends React.Component {
         const { name, location, avatar_url } = this.state.userInfo;
         return (
             <div className="user-card">
+                {/* Keep UserContext.Consumer inside <> OR <div> tag  */}
+                <div>
+                    <UserContext.Consumer>
+                        {(data) => <h1 className="font-bold">{data.loggedInUser}</h1>}
+                    </UserContext.Consumer>
+
+                </div>
                 <h2>Name - {this.props.name}</h2>
                 <h2>Location - {this.props.location}</h2>
                 <h2>Hobbie - {this.state.count} Cricket</h2>

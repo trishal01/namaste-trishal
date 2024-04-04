@@ -55,3 +55,14 @@ SCSS
 Styled Component
 CSS Libraries - Material UI, Bootstrap, ANT Design, Chakra UI
 Tailwind CSS
+
+# controlled and uncontrolled components
+
+When a component has its own state then it is a uncontrolled Component
+When a component is controlled based on their parent state are called as controlled state
+
+# State Management Library
+
+Redux - It creates a central store
+Redux Thunk middleware
+Remember : For small application context api is enough
