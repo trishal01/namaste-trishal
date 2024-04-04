@@ -1,9 +1,12 @@
-import RestroCard from "./RestroCard";
+import RestroCard, { recommendedLabelRestroCard } from "./RestroCard";
 import { useEffect, useState, useState } from 'react'
 import { restroApiResponse1 } from "../utils/mockData";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+
+// creating instance of HOC
+const RecommendedLabelRestroCard = recommendedLabelRestroCard(RestroCard);
 
 const Body = () => {
 
@@ -71,8 +74,10 @@ const Body = () => {
                 <div className="flex flex-wrap">
                     {console.log('11 ', restroApiResponse)}
                     {filteredRestroApiResponse.map((restro) => (
-                        <Link key={restro.info.id} to={'/restraunt/' + restro.info.id}> <RestroCard restroData={restro} /> </Link>
-
+                        // If avg rating is 4 or more show label as recommended
+                        <Link key={restro.info.id} to={'/restraunt/' + restro.info.id}>
+                            {(restro.info.avgRating >= 4) ? <RecommendedLabelRestroCard restroData={restro} /> : <RestroCard restroData={restro} />}
+                        </Link>
                     ))}
                 </div>
             </div>
