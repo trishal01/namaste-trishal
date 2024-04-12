@@ -163,9 +163,15 @@ LIFTING STATE UP - it is a feature in react to lift state from child component t
 whenever a state need to shared among siblings , we lift the state up to a common ancestor to make it a sole source of truth
 used in accordion functionality
 
+REDUX
 If we use context api then a number of context need to be create and handle, therefore devs prefer using Redux with toolkit
+Redux toolkit is standard way of writing redux now
 
+RTK Query can be used as well
 
+React testing library build on top pf DOM testing library
+
+React testing library used JEST (JS testing framework)
 
 
 

@@ -8,6 +8,9 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestroMenu from "./components/RestroMenu";
 import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
 // To lazy import component
 const Grocery = lazy(() => import('./components/Grocery'));
@@ -29,12 +32,14 @@ const AppLayout = () => {
         setUserName(user.name);
     })
     return (
-        <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-            <div>
-                <Header />
-                <Outlet />
-            </div>
-        </UserContext.Provider>
+        <Provider store={appStore}>
+            <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+                <div>
+                    <Header />
+                    <Outlet />
+                </div>
+            </UserContext.Provider>
+        </Provider>
     );
 };
 
@@ -45,6 +50,7 @@ const appRouter = createBrowserRouter([
             { path: '/about', element: <About /> },
             { path: '/contact', element: <Contact /> },
             { path: '/restraunt/:resId', element: <RestroMenu /> },
+            { path: '/cart', element: <Cart /> },
 
             // Suspense component's fallback attribute data is used to show the data for the time lazy load the files
             { path: '/grocery', element: <Suspense fallback={<h1>Loading... </h1>}> <Grocery /></Suspense> }],

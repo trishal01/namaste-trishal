@@ -3,6 +3,8 @@ import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import useOnlineStatus from '../utils/useOnlineStatus';
 import UserContext from '../utils/UserContext';
+import { useSelector } from 'react-redux';
+import cartSlice from '../utils/cartSlice';
 
 
 export const Header = () => {
@@ -10,6 +12,10 @@ export const Header = () => {
     const [loggedStatus, setLoggedStatus] = useState('Login');
     const onlineStatus = useOnlineStatus();
     const { loggedInUser } = useContext(UserContext);
+
+    // subscribing to the store using a selector
+    // useselector give access to whole store, but we can subscribe required state from store eg -> store.cart.items
+    const cartItems = useSelector((store) => store.cart.items)
 
     return (
         <div className="flex justify-between bg-pink-400 shadow-lg sm:bg-purple-2008">
@@ -27,6 +33,7 @@ export const Header = () => {
                     <li className='px-2'> <Link to='/contact'> Contact US </Link></li>
                     <li className='px-2'><Link to='/grocery'>Grocery</Link></li>
                     <button className='login' onClick={() => { loggedStatus === 'Login' ? setLoggedStatus('Logout') : setLoggedStatus('Login') }}>{loggedStatus}</button>
+                    <li className='px-2 font-medium'><Link to='/cart'>Cart - ({cartItems.length} items)</Link> </li>
                     <li className='px-2 font-medium'>{loggedInUser}</li>
 
 

@@ -63,6 +63,44 @@ When a component is controlled based on their parent state are called as control
 
 # State Management Library
 
-Redux - It creates a central store
+Redux - It creates a central store, a state management library
 Redux Thunk middleware
 Remember : For small application context api is enough
+Redux make testing easy
+
+# Redux TOOLKIT
+
+Install @redyc/toolkit react-redux
+Build our store
+Connect our store to our app
+create cart Slice
+Dispatch Action
+Selector
+
+# Developr Testing
+
+Manual testing
+Writing test cases
+Unit testing - Only testing the component where changed
+Integrated testing - Test a complete flow of part of code changed
+End to ENd testing - As soon as user landing on app till the user leaves the app
+
+    For E2E testing we need tools like cypress, seleniuum, puppyteer
+
+# Setting up testing in React app
+
+Install react testing library
+Install jest
+Install Babel dependencies (To use jest with babel)
+Configure bebel -> babel.config.js
+Config parcel file (.parcelrc) to disable parcel babel default transpilation, so to use babel.config.js
+Jest Configuration -> npx jest --init
+Install jest-environment-jsdom
+Install @babel/preset-react - Jest to work with JSX syntax
+Include @babel/preset-react in babel.config.js
+Install @testing-library/jest-dom  -> It give us list of all assert function
+
+JsDOM - JEST doesn't run on browser but to run test cases we need a runtime env where test cases run. It is like a browser where testing code run.
+
+
+
